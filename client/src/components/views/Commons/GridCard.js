@@ -7,7 +7,7 @@ function GridCard(props) {
     if (props.landingPage) {
         return (
             <Col lg={6} md={8} xs={24}>
-                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'relative', cursor: 'pointer' }}>
                     <a href={`/movie/${props.movieId}`}>
                         <img style={{ width: '100%', height: '320px' }} src={props.image} alt={props.movieName} />
                     </a>

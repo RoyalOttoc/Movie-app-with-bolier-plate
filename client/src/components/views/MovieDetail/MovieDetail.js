@@ -3,6 +3,7 @@ import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config'
 import MainImage from '../LandingPage/Sections/MainImage'
 import MovieInfo from './Sections/MovieInfo'
 import GridCard from '../Commons/GridCard'
+import Favorite from './Sections/Favorite'
 import { Row } from 'antd'
 
 function MovieDetail(props) {
@@ -48,13 +49,18 @@ function MovieDetail(props) {
 
             {/* Body */}
             <div style={{ width: '85%', margin: '1rem auto' }}>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Favorite movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
+                </div>
+
                 {/* MovieInfo */}
                 <MovieInfo movie={Movie} />
                 <br />
                 {/* Actors Grid */}
 
                 <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
-                    <button onClick={toggleActorView}>Toggle Actor View</button>
+                    <button style={{ cursor: 'pointer' }} onClick={toggleActorView}>Toggle Actor View</button>
 
 
                 </div>
